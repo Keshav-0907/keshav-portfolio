@@ -32,7 +32,16 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.sticky {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 999;
 }
