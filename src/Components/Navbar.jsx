@@ -46,9 +46,9 @@ const Navbar = () => {
                     <div className='flex items-center gap-1 min-w-fit'>
                         <IoDocumentTextOutline />
 
-                        <div>
+                        <a href={'#my-blogs'}>
                             blogs
-                        </div>
+                        </a>
                     </div>
                     <div className='flex items-center gap-1 min-w-fit'>
                         <IoCubeOutline />

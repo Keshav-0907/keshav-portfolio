@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const Articles = () => {
     return (
-        <div className='md:px-20 px-5 py-10 md:my-10'>
+        <div className='md:px-20 px-5 py-10 md:my-10' id='my-blogs'>
             <div className='flex justify-between col-auto md:pb-10 pb-6'>
                 <div className='md:text-4xl text-2xl font-inika'>
                     My Articles
