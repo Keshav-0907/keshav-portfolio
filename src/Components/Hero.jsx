@@ -1,9 +1,11 @@
 import React from 'react'
 import Avtar from '../assets/avtar.png'
 import { Link } from 'react-router-dom'
+import { RoughNotation } from "react-rough-notation";
 
 
 const Hero = () => {
+
   return (
     <div className='h-96  md:flex justify-around items-center w-full md:px-20 px-5 py-10 md:my-10'>
 
@@ -17,7 +19,14 @@ const Hero = () => {
             <img src={Avtar} className='w-20' alt='err' />
           </div>
           <div>
-            Hey, I am Keshav Malik
+            Hey, I am <RoughNotation
+              show={true}
+              type='underline'
+              animationDelay={600}
+              color="red" padding={4}
+              strokeWidth={2}>
+              Keshav Malik
+            </RoughNotation>
           </div>
         </div>
         <div className='md:text-base text-sm md:px-0 pr-3'>

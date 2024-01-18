@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { MdOutlineEmail } from "react-icons/md";
 
 
+
 const Footer = () => {
     return (
         <div className='md:px-20 px-5 pb-5 md:my-10'>

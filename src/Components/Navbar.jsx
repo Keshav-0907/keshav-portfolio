@@ -8,10 +8,9 @@ import { FiGithub } from "react-icons/fi";
 import { FaLinkedin } from "react-icons/fa";
 import { IoMdMenu, IoMdClose } from "react-icons/io";
 import { Link } from 'react-router-dom';
+import { FaBoltLightning } from "react-icons/fa6";
 
-
-
-const Navbar = () => {
+const Navbar = ({ openMessageBox }) => {
 
     const [isOpen, setIsOpen] = useState(false)
 
@@ -37,10 +36,10 @@ const Navbar = () => {
                             Home
                         </div>
                     </div>
-                    <div className='flex items-center gap-1 min-w-fit'>
+                    <div className='flex items-center gap-1 min-w-fit hover:cursor-pointer'>
                         <FaRegUser />
                         <div>
-                            about me
+                            About
                         </div>
                     </div>
                     <div className='flex items-center gap-1 min-w-fit'>
@@ -62,6 +61,7 @@ const Navbar = () => {
                     <Link className='cursor-pointer' to={'https://twitter.com/_keshav_malik'} target='_blank'> <FaXTwitter size={23} /> </Link>
                     <Link className='cursor-pointer' to={'https://www.linkedin.com/in/keshavmalik/'} target='_blank'><FaLinkedin size={23} /> </Link>
                     <Link className='cursor-pointer' to={'https://github.com/keshav-0907'} target='_blank'> <FiGithub size={23} /> </Link>
+                    <div className='cursor-pointer' onClick={openMessageBox}> <FaBoltLightning size={23} /> </div>
                 </div>
             </div>
 
@@ -117,6 +117,7 @@ const Navbar = () => {
 
 
         </div>
+        
     )
 }
 
