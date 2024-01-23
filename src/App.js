@@ -20,9 +20,14 @@ function App() {
       <div className="sticky">
         <Navbar openMessageBox={toggleMessageBox} />
       </div>
-      <div className="flex justify-center items-center h-full w-screen z-50 fixed">
-        <Message messageBox={messageBox} toggleMessageBox={toggleMessageBox} />
-      </div>
+      {messageBox && (
+        <div className="flex justify-center items-center h-full w-screen z-50 fixed">
+          <Message
+            messageBox={messageBox}
+            toggleMessageBox={toggleMessageBox}
+          />
+        </div>
+      )}
       <div>
         <Hero />
         <Skills />
