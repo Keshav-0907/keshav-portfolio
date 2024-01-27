@@ -13,10 +13,22 @@ import { FaBoltLightning } from "react-icons/fa6";
 const Navbar = ({ openMessageBox }) => {
 
     const [isOpen, setIsOpen] = useState(false)
+    const [colorMode, setColorMode] = useState('light')
 
     const toggleOpen = () => {
         setIsOpen(!isOpen)
     }
+
+    const toggleColor = () =>{
+        if(colorMode=='light'){
+            setColorMode('dark')
+        } else{
+            setColorMode('light')
+        }
+        console.log(colorMode)
+    }
+
+    
 
     return (
         <div className='flex justify-around h-16 items-center w-full border-b-gray-200 border-b-[1px] shadow-md'>
@@ -54,6 +66,12 @@ const Navbar = ({ openMessageBox }) => {
                         <a href={'#my-projects'}>
                             projects
                         </a>
+                    </div>
+                    <div className='flex items-center gap-1 min-w-fit'>
+                        <IoCubeOutline />
+                        <div onClick={toggleColor}>
+                            Color
+                        </div>
                     </div>
                 </div>
 
@@ -117,7 +135,7 @@ const Navbar = ({ openMessageBox }) => {
 
 
         </div>
-        
+
     )
 }
 
