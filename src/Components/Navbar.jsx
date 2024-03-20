@@ -10,25 +10,13 @@ import { IoMdMenu, IoMdClose } from "react-icons/io";
 import { Link } from 'react-router-dom';
 import { FaBoltLightning } from "react-icons/fa6";
 
-const Navbar = ({ openMessageBox }) => {
+const Navbar = ({ openMessageBox, colorMode, toggleColor}) => {
 
     const [isOpen, setIsOpen] = useState(false)
-    const [colorMode, setColorMode] = useState('light')
 
     const toggleOpen = () => {
         setIsOpen(!isOpen)
-    }
-
-    const toggleColor = () =>{
-        if(colorMode=='light'){
-            setColorMode('dark')
-        } else{
-            setColorMode('light')
-        }
-        console.log(colorMode)
-    }
-
-    
+    }    
 
     return (
         <div className='flex justify-around h-16 items-center w-full border-b-gray-200 border-b-[1px] shadow-md'>
@@ -63,16 +51,16 @@ const Navbar = ({ openMessageBox }) => {
                     </div>
                     <div className='flex items-center gap-1 min-w-fit'>
                         <IoCubeOutline />
-                        <a href={'#my-projects'}>
+                        <a href={'#my-projects'} className='scroll-smooth'>
                             projects
                         </a>
                     </div>
-                    <div className='flex items-center gap-1 min-w-fit'>
+                    {/* <div className='flex items-center gap-1 min-w-fit'>
                         <IoCubeOutline />
-                        <div onClick={toggleColor}>
-                            Color
+                        <div onClick={toggleColor} className='cursor-pointer'>
+                            Dark Mode
                         </div>
-                    </div>
+                    </div> */}
                 </div>
 
                 <div className='flex gap-4 w-1/2 justify-center'>

@@ -11,14 +11,26 @@ import { useState } from "react";
 
 function App() {
   const [messageBox, setMessageBox] = useState(false);
+  const [colorMode, setColorMode] = useState('light')
+
 
   const toggleMessageBox = () => {
     setMessageBox(!messageBox);
   };
+
+  const toggleColor = () =>{
+    if(colorMode === 'light'){
+        setColorMode('dark')
+    } else{
+        setColorMode('light')
+    }
+}
+
+  console.log(colorMode)
   return (
     <BrowserRouter>
       <div className="sticky">
-        <Navbar openMessageBox={toggleMessageBox} />
+        <Navbar openMessageBox={toggleMessageBox} toggleColor={toggleColor} colorMode={colorMode} />
       </div>
       {messageBox && (
         <div className="flex justify-center items-center h-full w-screen z-50 fixed">

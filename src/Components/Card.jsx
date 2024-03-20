@@ -4,7 +4,7 @@ import { LuExternalLink } from "react-icons/lu";
 
 const Card = (props) => {
   return (
-    <div className='bg-[#D4D4D866] w-full rounded-t-2xl rounded-b-2xl border-[1px] border-gray-300'>
+    <div className='bg-[#D4D4D866] py-1 w-full rounded-t-2xl rounded-b-2xl border-[1px] border-gray-300'>
 
 
       <div className='flex items-center gap-4 p-2 h-1/5'>

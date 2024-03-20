@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { RoughNotation } from "react-rough-notation";
 
 
-const Hero = () => {
+const Hero = ({colorMode}) => {
 
   return (
     <div className='h-96  md:flex justify-around items-center w-full md:px-20 px-5 py-10 md:my-10'>
