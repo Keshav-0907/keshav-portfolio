@@ -1,53 +1,44 @@
-import { BrowserRouter } from "react-router-dom";
 import "./App.css";
-import Articles from "./Components/Articles";
-import Footer from "./Components/Footer";
-import Hero from "./Components/Hero";
-import Navbar from "./Components/Navbar";
-import Projects from "./Components/Projects";
-import Skills from "./Components/Skills";
-import Message from "./Components/Message";
+import Articles from "./pages/Articles";
+import Footer from "./pages/Footer";
+import Hero from "./pages/Hero";
+import Navbar from "./pages/Navbar";
+import Skills from "./pages/Skills";
 import { useState } from "react";
+import { Moon } from "lucide-react";
+import Projects from "./pages/Projects";
+import Skills2 from "./pages/Skills2";
+
 
 function App() {
-  const [messageBox, setMessageBox] = useState(false);
-  const [colorMode, setColorMode] = useState('light')
+  const [colorMode, setColorMode] = useState('dark')
 
-
-  const toggleMessageBox = () => {
-    setMessageBox(!messageBox);
-  };
-
-  const toggleColor = () =>{
-    if(colorMode === 'light'){
-        setColorMode('dark')
-    } else{
-        setColorMode('light')
+  const toggleColor = () => {
+    if (colorMode === 'light') {
+      setColorMode('dark')
+    } else {
+      setColorMode('light')
     }
-}
-
-  console.log(colorMode)
+  }
   return (
-    <BrowserRouter>
+    <div className={`relative ${colorMode === 'dark' ? ('bg-[#141414] text-white') : ('bg-white')}`}>
       <div className="sticky">
-        <Navbar openMessageBox={toggleMessageBox} toggleColor={toggleColor} colorMode={colorMode} />
+        <Navbar colorMode={colorMode} />
       </div>
-      {messageBox && (
-        <div className="flex justify-center items-center h-full w-screen z-50 fixed">
-          <Message
-            messageBox={messageBox}
-            toggleMessageBox={toggleMessageBox}
-          />
-        </div>
-      )}
-      <div>
-        <Hero />
+      <div className={``}>
+        <Hero colorMode={colorMode}/>
+        {/* <Skills2 /> */}
         <Skills />
-        <Projects />
+        <Projects colorMode={colorMode}/>
         <Articles />
-        <Footer />
+        <Footer colorMode={colorMode} />
       </div>
-    </BrowserRouter>
+      <div className="bottom-5 left-5 sticky w-fit cursor-pointer">
+        <div className="border-2 rounded-full bg-white shadow-md p-3" onClick={toggleColor}>
+          <Moon size={20} color="black" />
+        </div>
+      </div>
+    </div>
   );
 }
 

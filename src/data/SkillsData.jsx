@@ -27,7 +27,7 @@ const SkillDataR1 = [
     {
         id:6,
         title: 'ExpressJS',
-        url: 'https://res.cloudinary.com/dzqgyl0wf/image/upload/v1704929069/icon-express_rtnvgi.png'
+        url: 'https://images.credly.com/images/1c2c86e1-16ce-4e4d-a425-d1ac96bb026d/express.png'
     },
     {
         id:7,

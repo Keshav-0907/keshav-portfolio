@@ -6,24 +6,25 @@ import { IoDocumentTextOutline, IoCubeOutline } from "react-icons/io5";
 import { FaXTwitter } from "react-icons/fa6";
 import { FiGithub } from "react-icons/fi";
 import { FaLinkedin } from "react-icons/fa";
-import { IoMdMenu, IoMdClose } from "react-icons/io";
 import { Link } from 'react-router-dom';
-import { FaBoltLightning } from "react-icons/fa6";
 
-const Navbar = ({ openMessageBox, colorMode, toggleColor}) => {
+const Navbar = ({colorMode}) => {
 
     const [isOpen, setIsOpen] = useState(false)
-
-    const toggleOpen = () => {
-        setIsOpen(!isOpen)
-    }    
+ 
 
     return (
-        <div className='flex justify-around h-16 items-center w-full border-b-gray-200 border-b-[1px] shadow-md'>
+        <div className={` ${colorMode === 'dark' ? ('bg-[#212129] text-white') : ('bg-white')} flex justify-around h-16 items-center w-full border-b-gray-200 border-b-[1px] shadow-md`}>
 
             <div className='flex md:w-1/3 justify-center'>
                 <a href='/'>
-                    <img className='w-1/2' src={Logo} alt='err' />
+                    {
+                        colorMode === 'dark' ? (
+                            <img src='/darkMode.png' alt='logo' className='w-full h-16' />
+                        ) : (
+                            <img src='/lightMode.png' alt='logo' className='w-full h-16' />
+                        )
+                    }
                 </a>
 
             </div>
@@ -55,31 +56,14 @@ const Navbar = ({ openMessageBox, colorMode, toggleColor}) => {
                             projects
                         </a>
                     </div>
-                    {/* <div className='flex items-center gap-1 min-w-fit'>
-                        <IoCubeOutline />
-                        <div onClick={toggleColor} className='cursor-pointer'>
-                            Dark Mode
-                        </div>
-                    </div> */}
+                    
                 </div>
 
                 <div className='flex gap-4 w-1/2 justify-center'>
                     <Link className='cursor-pointer' to={'https://twitter.com/_keshav_malik'} target='_blank'> <FaXTwitter size={23} /> </Link>
                     <Link className='cursor-pointer' to={'https://www.linkedin.com/in/keshavmalik/'} target='_blank'><FaLinkedin size={23} /> </Link>
                     <Link className='cursor-pointer' to={'https://github.com/keshav-0907'} target='_blank'> <FiGithub size={23} /> </Link>
-                    <div className='cursor-pointer' onClick={openMessageBox}> <FaBoltLightning size={23} /> </div>
                 </div>
-            </div>
-
-            <div className='flex md:hidden justify-center '>
-                {
-                    isOpen ?
-                        (
-                            <IoMdClose onClick={toggleOpen} size={30} />
-                        ) : (
-                            <IoMdMenu onClick={toggleOpen} size={30} />
-                        )
-                }
             </div>
 
             {
